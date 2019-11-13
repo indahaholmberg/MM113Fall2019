@@ -1,4 +1,4 @@
-const StarTrekTweet = {
+const StarTrekTweet ={
     name: 'Star Trek',
     handle: '@StarTrek',
     text: 'Welcome to the OFFICIAL Star Trek Twitter Page!'
@@ -11,6 +11,9 @@ const modifyText = () => {
   //Change the text of user2 to be the handle from the StarTrekTweet object
   //Changes the text of message 2 class to be the handle from the StarTrekTweet object
   // YOUR CODE BELOW THIS LINE.
+    document.getElementById('message2').innerHTML= StarTrekTweet.text;
+    document.querySelector('#link2').innerHTML= StarTrekTweet.handle;
+    document.getElementById('user2').innerHTML= StarTrekTweet.name;
 }
 
 const changeLinkAndImageAttributes = () => {
@@ -18,6 +21,9 @@ const changeLinkAndImageAttributes = () => {
   //Sets the href attribute for link2 to point to the second element in the links array
   //Sets the src attribute for the Ohlone image to point to the third element in the links array
   // YOUR CODE BELOW THIS LINE.
+    document.querySelector('#link1').href= links[0];
+    document.querySelector('#link2').href= links[1];
+    document.querySelector('#Ohlone').src= links[2];
 }
 
 const changeClassAttribute = () => {
@@ -25,7 +31,7 @@ const changeClassAttribute = () => {
   //function so that it replaces the “tweet” class with the “tweet-pink” class for the two tweets.
   // change id="tweet1" class="tweet" to id="tweet1" class="tweet-pink"
   // YOUR CODE BELOW THIS LINE
-  
+    document.getElementById('tweet1').className= 'tweet-pink';
 }
 
 const appendElements = () => {
@@ -35,5 +41,13 @@ const appendElements = () => {
   //points to an image of your choice,symbolizing something about the course.
   //id="tweet1"
   // YOUR CODE BELOW THIS LINE
+    const newLink= document.createElement ('a');
+    newLink.href= 'http://www.ohlone.edu';
+    newLink.appendChild(document.createTextNode('Intro to JavaScript'));
+    document.getElementById('tweet1').appendChild(newLink);
+    
+    const img= document.createElement('img');
+    img.src= "https://external-preview.redd.it/NgWFa6bp1oViwWwdfVYU1Wwy8_w8O0bsinJjyLZGD7M.jpg?width=216&crop=smart&auto=webp&s=34c7f18328d996ae5d6f40d06793944ee31cbea8";
+    document.getElementById('tweet1').appendChild(img);
 
 }
